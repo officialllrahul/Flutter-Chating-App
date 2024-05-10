@@ -13,11 +13,13 @@ late Size mq;
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersiveSticky);
+
   //for setting orientation portrait only
-  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitDown,DeviceOrientation.portraitUp]).then((value) async {
+  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitDown, DeviceOrientation.portraitUp]).then((value) async {
     Firebase.initializeApp(
       options: DefaultFirebaseOptions.currentPlatform,
     );
+
     var result = await FlutterNotificationChannel().registerNotificationChannel(
       description: 'For showing message notifications',
       id: 'chats',
